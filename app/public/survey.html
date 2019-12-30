@@ -10,7 +10,11 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/../css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
 </head>
 
@@ -21,29 +25,260 @@
 
         <div class="row">
             <div class="center">
-            <div class="col s12">
-                <span class="flow-text">Friend Finder</span>
-                <div class="divider"></div>
-                <div class="section">
-                    <h5>Answer some questions to find your best match!</h5>
-                    <p>Click on the button below to commence the survey</p>
+                <div class="col s12">
+                    <span class="flow-text">Friend Finder</span>
+                    <div class="divider"></div>
+                    <div class="section">
+                        <h5>Answer some questions to find your best match!</h5>
+                        <p>Click on the button below to commence the survey</p>
+                    </div>
+
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="input-field col s6">
+                                <input placeholder="First Name" id="first_name" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+
+
+
+
+                            <div class="input-field col s6">
+                                <input placeholder="Photo link" id="photo_url" type="url" class="validate">
+                                <label for="photo_url"></label>
+                            </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="divider"></div>
+                        <div class="section">
+                            <h5>You consider yourself an easygoing person.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q1" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You prefer staying in over the weekend versus going out.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q2" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>Cats are superior to dogs.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q3" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>Dogs make better companions than cats.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q4" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You are competitive by nature.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q5" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You tend to get bored easily.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q6" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You hate parties.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q7" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You enjoy debating a variety of topics.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q8" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You motto is "better late than never".</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q9" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <h5>You hate answering questions about yourself.</h5>
+                            <div class="input-field col s12" id="input-box">
+                                <select class="chosen-select" id="q10" style="display: block;">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                         
+
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light submitButton" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+
+
+                    </form>
+
+
+
+
+
+
+
+
+
                 </div>
-            
-
-
-
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                        <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
             </div>
-
-
         </div>
-    </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="server.js"></script>
-    <script src="friends.js"></script>
+        </div>
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+       <script  type="text/javascript">
+
+
+$(document).ready(function (){
+
+$('#submitButton').on('click', function(event) {
+event.preventDefault(); 
+
+newUser = {
+    name: $('#first_name').val(),
+    photo: $('#photo_url').val(),
+    scores: [
+        $('#q1').val(),
+        $('#q2').val(),
+        $('#q3').val(),
+        $('#q4').val(),
+        $('#q5').val(),
+        $('#q6').val(),
+        $('#q7').val(),
+        $('#q8').val(),
+        $('#q9').val(),
+        $('#q10').val(),
+    ]
+    
+}
+
+
+})
+
+
+})
+
+function runFriendData() {
+            let currentURL = window.location.origin; 
+            $.post(currentURL + "/api/friends", newUser, function(data) {
+            $('matchName').text(data.name); 
+            $('matchPhoto').attr("src",data.photo); 
+            
+            });
+           
+                
+
+                for (let i = 0; i <scoresArray.length; i++) {
+                    console.log(scoresArray[i]); 
+                    console.log(scoresArray[i].scores);
+                    
+                }
+           
+        }
+
+        runFriendData(); 
+
+        
+
+
+       </script>
 
 
 
 </body>
+
+
+
+
+
 
 </html>
