@@ -40,10 +40,10 @@
 
                     <div class="form-row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input id="first_name" type="text" class="form-control" placeholder="First name">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Photo Link">
+                            <input id="photo_url" type="text" class="form-control" placeholder="Photo Link">
                         </div>
                     </div>
 
@@ -185,12 +185,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title" id="matchName"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <img id="matchPhoto" src="#">
                         <p>Modal body text goes here.</p>
                     </div>
                     <div class="modal-footer">
@@ -207,9 +208,10 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -222,8 +224,39 @@
 
         $(document).ready(function () {
             $("#submitButton").on("click", function () {
+                event.preventDefault();
+
                 console.log("this works");
+               
+
+                 
+    
+                newUser = {
+                    name: $('#first_name').val().trim(),
+                    photo: $('#photo_url').val().trim(),
+                    scores: [
+                        $('#q1').val(),
+                        $('#q2').val(),
+                        $('#q3').val(),
+                        $('#q4').val(),
+                        $('#q5').val(),
+                        $('#q6').val(),
+                        $('#q7').val(),
+                        $('#q8').val(),
+                        $('#q9').val(),
+                        $('#q10').val(),
+                    ]
+        
+                };
+
+                console.log(newUser.name);
+
+                let currentURL = window.location.origin; 
+                $.post(currentURL + "/api/friends", newUser, function(data) {
+                $('matchName').text(data.name); 
+                $('matchPhoto').attr("src",data.photo); 
                 $('#resultsModal').modal('toggle');
+                });
 
 
             });
