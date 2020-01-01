@@ -231,7 +231,7 @@
 
                  
     
-                newUser = {
+                let newUser = {
                     name: $('#first_name').val().trim(),
                     photo: $('#photo_url').val().trim(),
                     scores: [
@@ -250,11 +250,15 @@
                 };
 
                 console.log(newUser.name);
+                console.log(newUser.photo); 
+                for (i = 0; i < newUser.scores.length; i ++) {
+                    console.log(newUser.scores[i]); 
+                }
 
                 let currentURL = window.location.origin; 
                 $.post(currentURL + "/api/friends", newUser, function(data) {
-                $('matchName').text(data.name); 
-                $('matchPhoto').attr("src",data.photo); 
+                $('#matchName').text(data.name); 
+                $('#matchPhoto').attr("src",data.photo); 
                 $('#resultsModal').modal('toggle');
                 });
 

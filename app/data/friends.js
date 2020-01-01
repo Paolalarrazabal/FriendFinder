@@ -1,8 +1,8 @@
-let scoresArray = 
+let friendData = 
     [
     {
-    name: "Bob",
-    photo: "https://pbs.twimg.com/media/BsrkPu2CUAEWSqY.jpg", 
+    name: "Prison Mike",
+    photo: "https://vignette.wikia.nocookie.net/theoffice/images/9/96/Prisonmike.png/revision/latest?cb=20100327171549", 
     scores: [
         5,
         1,
@@ -19,8 +19,8 @@ let scoresArray =
 }
 ,
 {
-    name: "Bill",
-    photo: "https://pbs.twimg.com/media/BsrkPu2CUAEWSqY.jpg", 
+    name: "Dwight",
+    photo: "https://cdn.mises.org/styles/social_media_1200_x_1200/s3/schrute3.JPG?itok=eYY1lK_6", 
     scores: [
         1,
         4,
@@ -37,7 +37,7 @@ let scoresArray =
 }
 ]
 
-module.exports = scoresArray; 
+module.exports = friendData; 
 
 
 

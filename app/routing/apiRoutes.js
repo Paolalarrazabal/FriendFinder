@@ -1,53 +1,50 @@
-const friendData = require('../data/friends.js'); 
+const friendData = require('../data/friends.js');
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.get('/api/friends', function (req, res) {
-        res.json(friendData); 
+        res.json(friendData);
     });
 
-    app.post('/api/friends', function (req,res) {
+    app.post('/api/friends', function (req, res) {
 
-    let userScore = req.body.scores;
-    const friendsArr = [];
-    let friendMatch = 0;
-
-    for (let i=0; i < userScore.length; i ++) {
-        friendsArr.push(parseInt(userScore[i]))
-
-    }
-
-    userScore = friendsArr;
-
-    for (let i=0; i < friendsData.length; i++) {
-        scoreDifference = 0; 
-        for (let j = 0; j < userScore.length; j++) {
-         scoreDifference += Math.abs(friendData[i].scores[j]-userScore[j]); 
+        let bestFriendMatch = {
+            name: "",
+            photo: "",
+            scoreDifference: 1000
         }
-        friendsArr.push(scoreDifference); 
 
-    }
+        let newUser = req.body;
+        let userName = newUser.name;
+        let userScores = newUser.scores;
+        let userPhoto = newUser.photo;
 
-    for (let i = 0; i < friendsArr.length; i ++) {
-        if (friendsArr[i] <= friendsArr[friendMatch]) {
-            friendMatch = i;
+        let comparisonDifference = 0;
+
+        for (let i = 0; i < friendData.length; i++) {
+            
+            comparisonDifference = 0;
+
+            for (let j = 0; j < userScores.length; j++) {
+                comparisonDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendData[i].scores[j]));
+
+
+                if (comparisonDifference <= bestFriendMatch.scoreDifference) {
+                    bestFriendMatch.name = friendData[i].name;
+                    bestFriendMatch.photo = friendData.photo;
+                    bestFriendMatch.scoreDifference = comparisonDifference;
+                    console.log(bestFriendMatch);
+                }
+            }
+
         }
-        
-    }
 
 
-let bestMatch = friendData[friendMatch]; 
-res.json(bestMatch); 
-friendData.push(req.body); 
-console.log(req.body);
+friendData.push(newUser); 
+res.json(bestFriendMatch); 
+console.log(bestFriendMatch); 
 
 
 
-
-    
-    
-    
-
-   
-});
+    });
 
 };
