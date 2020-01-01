@@ -30,9 +30,9 @@ module.exports = function (app) {
 
                 if (comparisonDifference <= bestFriendMatch.scoreDifference) {
                     bestFriendMatch.name = friendData[i].name;
-                    bestFriendMatch.photo = friendData.photo;
+                    bestFriendMatch.photo = friendData[i].photo;
                     bestFriendMatch.scoreDifference = comparisonDifference;
-                    console.log(bestFriendMatch);
+                    
                 }
             }
 
