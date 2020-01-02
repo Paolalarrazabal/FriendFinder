@@ -8,6 +8,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + "/app/css"));
+
 
 require('./app/routing/apiRoutes')(app); 
 require('./app/routing/htmlRoutes')(app); 

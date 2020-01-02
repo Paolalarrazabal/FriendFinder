@@ -1,7 +1,20 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 #input-box {
 width: 400px; 
 }
 
 .container {
 background-color: darkgrey; 
+}
+
+.jumbotron {
+    background-color: darkgray;
+}
+
+.form-group {
+    padding-top: 15px;
 }
